@@ -128,9 +128,9 @@ Our research has successfully addressed key challenges in medical AI through the
 3. Few-shot learning effectively leveraged limited data to adapt the model to the medical domain.
 
 These approaches collectively demonstrated significant improvements in model accuracy, showcasing the potential of AI in healthcare applications, particularly for senior care.
-**6. Comparison with Project 11-b and Analysis of Methods**
+## 6. Comparison with Project 11-b and Analysis of Methods**
 In response to the valuable feedback received, we would like to provide additional insights into our results, particularly in comparison to Project 11-b, and elaborate on the differences in our methodologies.
-7.1 Comparison of Results and Methodologies
+### 6.1 Comparison of Results and Methodologies
 While both our project and Project 11-b aimed to improve Speech-to-Text (STT) performance in the medical field, we adopted different approaches to achieve this goal.
 Our Approach: Data Augmentation
 Our method focused on data augmentation techniques applied directly to the audio data. The primary goal was to enhance the model's ability to perform well in challenging acoustic environments, such as:
@@ -142,7 +142,7 @@ Situations with poor audio quality
 By applying techniques like noise addition, reverberation, and distortion to our training data, we aimed to create a more robust model capable of handling real-world variability in audio inputs.
 Project 11-b Approach: Ensemble Method
 In contrast, Project 11-b utilized an ensemble method, combining different pre-trained models such as Whisper Base and Large, which had already undergone noise training. Their approach theoretically allows for greater model robustness by leveraging the strengths of multiple models.
-**7.2 Analysis of CER Improvements**
+## 6.2 Analysis of CER Improvements
 we can discuss the improvements we observed in our Character Error Rate (CER) across different methods:
 
 Baseline Whisper Model: CER of 3.05
@@ -150,7 +150,7 @@ Data Augmented Model: CER of 2.47
 Few-shot Learning (15-shot): CER of 2.81
 
 Our data augmentation technique showed a significant improvement, reducing the CER by 19% compared to the baseline. The few-shot learning approach also showed improvement, though not as substantial as the data augmentation method.
-**7.3 Comparative Analysis**
+## 6.3 Comparative Analysis
 The different approaches used by our project and Project 11-b each have their strengths:
 
 Our Data Augmentation Approach:
@@ -168,11 +168,11 @@ May achieve higher overall accuracy, especially on high-quality inputs
 
 
 
-7.4 Dataset Considerations
+## 6.4 Dataset Considerations
 It's important to note that the effectiveness of these methods can vary depending on the specific characteristics of the training and test datasets used.
 Our training dataset consisted of 12,000 samples of free talk, augmented using various techniques. The test set comprised 1,500 samples, representing a mix of original and augmented data to simulate real-world conditions.
 the ensemble method typically requires a substantial amount of diverse data to train effectively.
-7.5 Future Directions
+## 6.5 Future Directions
 Given the strengths of both approaches, a promising direction for future research could be to combine data augmentation techniques with ensemble methods. This hybrid approach could potentially yield a model that is both robust to various audio conditions and highly accurate across a wide range of inputs.
 Additionally, further investigation into the performance of both methods on specific subsets of medical speech data (e.g., different dialects, age groups, or medical specialties) could provide valuable insights for tailoring these approaches to specific use cases in the medical field.
 
