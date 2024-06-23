@@ -262,7 +262,7 @@ gingercake01/0604_15000_freetalk_4method(Contains 15,000 audios, divided into fo
 gingercake01/15000free_talk_sample(including 15,000 senior citizens free conversation)
 
 ## Model:
->>>>>>> 256494c458897eae23a85b5e728484df34648b9d
+> 256494c458897eae23a85b5e728484df34648b9d
 gingercake01/STT_15000_4method_audio_basev2_0607
 The model gingercake01/STT_15000_4method_audio_basev2_0607 was trained using the dataset 0604_15000_freetalk_4method which underwent audio augmentation. This model achieved the highest accuracy in the transcription tasks in the medical domain.
 ![image](https://github.com/hairi0226/2024-MACHINE-LEARNING-AND-PROGRAMMING-final-report/assets/145079607/dc87b9c6-53ea-41e2-a496-91862528024c)
