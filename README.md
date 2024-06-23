@@ -71,7 +71,42 @@ The dataset was split into four equal parts, each receiving a different augmenta
 3. Distortion
 4. No change (Raw audio)
 
-### 3.3 Results
+### 3.3 Detail of data augmentation
+
+data augmentation Code was uploaded in "audio_augmentation.ipynb"
+
+
+### Data Augmentation
+
+For audio processing, the following augmentation techniques were selected:
+
+1. **Noise Augmentation:**
+   ```python
+   augment_noise = Compose([
+       AddGaussianNoise(min_amplitude=0.0001, max_amplitude=0.001, p=1.0)
+   ])
+   ```
+   * *Details:* Initially, the parameters for noise augmentation were set to `min_amplitude=0.01` and `max_amplitude=0.1`. However, this resulted in audio that was difficult to discern by the human ear. Additionally, small sample training of the STT model under these conditions yielded a character error rate (CER) of approximately 15-20%. Therefore, for the final model training, the amplitude of the noise was appropriately reduced to enhance performance.
+
+2. **Reverb Augmentation:**
+   ```python
+   augment_reverb = Compose([
+       TimeStretch(min_rate=0.95, max_rate=1.05, p=1.0)
+   ])
+   ```
+
+3. **Distortion Augmentation:**
+   ```python
+   augment_distortion = Compose([
+       PitchShift(min_semitones=-1, max_semitones=1, p=1.0)
+   ])
+   ```
+   * *Details:* Both distortion and reverb augmentations underwent slight adjustments to optimize their impact on the final model training.
+
+These augmentations were meticulously chosen and fine-tuned based on preliminary tests and observations to ensure an optimal balance between enhancing the training dataset and maintaining audio quality for human listeners. The adjustments led to improved performance and accuracy in the final speech-to-text model.
+
+
+### 3.4 Results
 
 We compared the performance of the augmented Whisper model against the base model trained on original samples. The results were as follows:
 
