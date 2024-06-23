@@ -1,0 +1,23 @@
+{
+  "발화정보" : {
+    "stt" : "제일 (SP:하다다는)핫하다는 흥행 순위를 많이 보게 되는데 흥행순위가 ",
+    "scriptId" : "노인대화-08632",
+    "fileNm" : "노인남여_노인대화07_F_1522434093_60_경상_실내_08632.wav",
+    "recrdTime" : "4.950",
+    "recrdQuality" : "16K",
+    "recrdDt" : "2020-11-21 20:53:33",
+    "scriptSetNo" : "T_노인대화_7"
+  },
+  "대화정보" : {
+    "recrdEnvrn" : "실내",
+    "colctUnitCode" : "AI 챗봇",
+    "cityCode" : "경상",
+    "recrdUnit" : "AndroidOS",
+    "convrsThema" : " 방송/연예 "
+  },
+  "녹음자정보" : {
+    "gender" : "여",
+    "recorderId" : "1522434093",
+    "age" : 60
+  }
+}

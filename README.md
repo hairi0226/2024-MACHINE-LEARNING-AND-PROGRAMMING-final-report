@@ -1,5 +1,5 @@
-# 2024-MACHINE-LEARNING-AND-PROGRAMMING-final-report
-# Final Report: Enhancing the Performance of Speech-To-Text (STT) Models in the Medical Field Using Non-Medical Field Data
+# 2024-MACHINE-LEARNING-AND-PROGRAMMING-final-report(Jianghairi_2023324083)
+# Final Report: Enhancing the Performance of Speech-To-Text (STT) Models in the Medical Field Using Non-Medical Field Data(11-A_group_task)
 
 ## 1. Introduction
 
@@ -71,7 +71,41 @@ The dataset was split into four equal parts, each receiving a different augmenta
 3. Distortion
 4. No change (Raw audio)
 
-### 3.3 Results
+### 3.3 Detail of data augmentation
+
+data augmentation Code was uploaded in "audio_augmentation.ipynb"
+
+### Data Augmentation
+
+For audio processing, the following augmentation techniques were selected:
+
+1. **Noise Augmentation:**
+   ```python
+   augment_noise = Compose([
+       AddGaussianNoise(min_amplitude=0.0001, max_amplitude=0.001, p=1.0)
+   ])
+   ```
+   * *Details:* Initially, the parameters for noise augmentation were set to `min_amplitude=0.01` and `max_amplitude=0.1`. However, this resulted in audio that was difficult to discern by the human ear. Additionally, small sample training of the STT model under these conditions yielded a character error rate (CER) of approximately 15-20%. Therefore, for the final model training, the amplitude of the noise was appropriately reduced to enhance performance.
+
+2. **Reverb Augmentation:**
+   ```python
+   augment_reverb = Compose([
+       TimeStretch(min_rate=0.95, max_rate=1.05, p=1.0)
+   ])
+   ```
+
+3. **Distortion Augmentation:**
+   ```python
+   augment_distortion = Compose([
+       PitchShift(min_semitones=-1, max_semitones=1, p=1.0)
+   ])
+   ```
+   * *Details:* Both distortion and reverb augmentations underwent slight adjustments to optimize their impact on the final model training.
+
+These augmentations were meticulously chosen and fine-tuned based on preliminary tests and observations to ensure an optimal balance between enhancing the training dataset and maintaining audio quality for human listeners. The adjustments led to improved performance and accuracy in the final speech-to-text model.
+
+
+### 3.4 Results
 
 We compared the performance of the augmented Whisper model against the base model trained on original samples. The results were as follows:
 
@@ -178,13 +212,25 @@ Additionally, further investigation into the performance of both methods on spec
 
 
 ##required data and a trained model
-all used data and trained model was updated on huggingface
+all used data and trained model was updated on **huggingface**
 Dataset:
-gingercake01/0607medical_data15000(including .....)
-gingercake01/0604_15000_freetalk_4method(including .....)
-gingercake01/15000free_talk_sample(including .....)
+gingercake01/0607medical_data15000(including 15000 medical field audio data)
+gingercake01/0604_15000_freetalk_4method(Contains 15,000 audios, divided into four equal parts, including noise augmentation, distortion, reverberation, and raw audio.)
+gingercake01/15000free_talk_sample(including 15,000 senior citizens free conversation)
 
 Model:
-gingercake01/STT_15000_4method_audio_basev2_0607(including .....)
-gingercake01/STT_15000audio_basev2_0606(including .....)
-gingercake01/STT_1000audio_basev3(including .....)
+gingercake01/STT_15000_4method_audio_basev2_0607
+The model gingercake01/STT_15000_4method_audio_basev2_0607 was trained using the dataset 0604_15000_freetalk_4method which underwent audio augmentation. This model achieved the highest accuracy in the transcription tasks in the medical domain.
+![image](https://github.com/hairi0226/2024-MACHINE-LEARNING-AND-PROGRAMMING-final-report/assets/145079607/dc87b9c6-53ea-41e2-a496-91862528024c)
+![image](https://github.com/hairi0226/2024-MACHINE-LEARNING-AND-PROGRAMMING-final-report/assets/145079607/e9d7c041-58f2-40e7-a8c0-6649f8720d75)
+
+
+gingercake01/STT_15000audio_basev2_0606
+The model STT_15000audio_basev2_0606 was trained using 15,000 freetalk datasets that were not subjected to audio augmentation, serving as a control model.
+![image](https://github.com/hairi0226/2024-MACHINE-LEARNING-AND-PROGRAMMING-final-report/assets/145079607/2aa0d038-6b19-493a-86e7-823bfa545a73)
+![image](https://github.com/hairi0226/2024-MACHINE-LEARNING-AND-PROGRAMMING-final-report/assets/145079607/a80fc0c2-d61b-417d-9ebc-d11cf6c9e6e7)
+
+gingercake01/STT_1000audio_basev3
+The model gingercake01/STT_1000audio_basev3 was initially trained with a small sample dataset to test the feasibility of the code and to prevent wasting GPU resources.
+![image](https://github.com/hairi0226/2024-MACHINE-LEARNING-AND-PROGRAMMING-final-report/assets/145079607/c6b97c67-6e9c-491c-99ce-6e636ce4e922)
+![image](https://github.com/hairi0226/2024-MACHINE-LEARNING-AND-PROGRAMMING-final-report/assets/145079607/f93268fa-ff93-43a1-b604-53ca760ecc60)

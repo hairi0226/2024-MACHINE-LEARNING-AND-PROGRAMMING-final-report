@@ -1,0 +1,23 @@
+{
+  "발화정보" : {
+    "stt" : "이제 사람에 따라 이제 음악도 약간 달라지네요 ",
+    "scriptId" : "노인대화-08601",
+    "fileNm" : "노인남여_노인대화07_F_1522434093_60_경상_실내_08601.wav",
+    "recrdTime" : "3.920",
+    "recrdQuality" : "16K",
+    "recrdDt" : "2020-11-21 20:47:17",
+    "scriptSetNo" : "T_노인대화_7"
+  },
+  "대화정보" : {
+    "recrdEnvrn" : "실내",
+    "colctUnitCode" : "AI 챗봇",
+    "cityCode" : "경상",
+    "recrdUnit" : "AndroidOS",
+    "convrsThema" : " 방송/연예 "
+  },
+  "녹음자정보" : {
+    "gender" : "여",
+    "recorderId" : "1522434093",
+    "age" : 60
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "발화정보" : {
+    "stt" : "근데 프로그램 중에서 동물농장이라든가 ",
+    "scriptId" : "노인대화-08613",
+    "fileNm" : "노인남여_노인대화07_F_1522434093_60_경상_실내_08613.wav",
+    "recrdTime" : "3.670",
+    "recrdQuality" : "16K",
+    "recrdDt" : "2020-11-21 20:49:24",
+    "scriptSetNo" : "T_노인대화_7"
+  },
+  "대화정보" : {
+    "recrdEnvrn" : "실내",
+    "colctUnitCode" : "AI 챗봇",
+    "cityCode" : "경상",
+    "recrdUnit" : "AndroidOS",
+    "convrsThema" : " 방송/연예 "
+  },
+  "녹음자정보" : {
+    "gender" : "여",
+    "recorderId" : "1522434093",
+    "age" : 60
+  }
+}

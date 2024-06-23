@@ -1,0 +1,23 @@
+{
+  "발화정보" : {
+    "stt" : "그런 프로 중에서 보시는 게 있을까요 ",
+    "scriptId" : "노인대화-08612",
+    "fileNm" : "노인남여_노인대화07_F_1522434093_60_경상_실내_08612.wav",
+    "recrdTime" : "3.580",
+    "recrdQuality" : "16K",
+    "recrdDt" : "2020-11-21 20:49:16",
+    "scriptSetNo" : "T_노인대화_7"
+  },
+  "대화정보" : {
+    "recrdEnvrn" : "실내",
+    "colctUnitCode" : "AI 챗봇",
+    "cityCode" : "경상",
+    "recrdUnit" : "AndroidOS",
+    "convrsThema" : " 방송/연예 "
+  },
+  "녹음자정보" : {
+    "gender" : "여",
+    "recorderId" : "1522434093",
+    "age" : 60
+  }
+}

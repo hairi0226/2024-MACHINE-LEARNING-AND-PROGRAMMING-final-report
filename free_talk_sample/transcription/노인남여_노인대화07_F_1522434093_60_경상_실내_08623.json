@@ -1,0 +1,23 @@
+{
+  "발화정보" : {
+    "stt" : "그런 영화가 많죠 근데 요즘엔 마블 (SP:명화사가)영화사가",
+    "scriptId" : "노인대화-08623",
+    "fileNm" : "노인남여_노인대화07_F_1522434093_60_경상_실내_08623.wav",
+    "recrdTime" : "4.180",
+    "recrdQuality" : "16K",
+    "recrdDt" : "2020-11-21 20:51:29",
+    "scriptSetNo" : "T_노인대화_7"
+  },
+  "대화정보" : {
+    "recrdEnvrn" : "실내",
+    "colctUnitCode" : "AI 챗봇",
+    "cityCode" : "경상",
+    "recrdUnit" : "AndroidOS",
+    "convrsThema" : " 방송/연예 "
+  },
+  "녹음자정보" : {
+    "gender" : "여",
+    "recorderId" : "1522434093",
+    "age" : 60
+  }
+}
