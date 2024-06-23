@@ -51,12 +51,36 @@ We generated benchmarks for the Tiny, Small, and Base versions of the Whisper mo
 ## 3. Data Augmentation
 
 ### 3.1 Methodology
+Our data augmentation approach was designed to enhance the robustness and generalization capabilities of the Speech-to-Text (STT) model, particularly for medical conversations involving senior speakers. We applied the following techniques:
 
-Our data augmentation approach focused on enhancing the robustness and generalization capabilities of the STT model. We applied the following techniques:
+Noise addition: We introduced controlled levels of background noise to simulate real-world conditions. This technique is crucial because:
 
-1. Noise addition: Introducing controlled levels of background noise to simulate real-world conditions.
-2. Reverberation: Adding echo effects to mimic different acoustic environments.
-3. Distortion: Applying subtle distortions to the audio signal to increase variety.
+It mimics various environments where medical conversations might occur (e.g., busy clinics, hospital rooms with equipment noise).
+It helps the model become more resilient to unexpected acoustic interferences.
+The noise levels were carefully calibrated to maintain audio intelligibility while providing sufficient challenge to the model.
+
+
+Reverberation: We added echo effects to mimic different acoustic environments. This technique is important because:
+
+It simulates the diverse acoustic properties of medical facilities (e.g., small examination rooms, large waiting areas).
+It helps the model adapt to speech that may be altered by room acoustics.
+We experimented with different reverberation times and intensities to find an optimal balance.
+
+
+Distortion: We applied subtle distortions to the audio signal to increase variety. This technique is valuable because:
+
+It simulates potential issues in audio capture or transmission.
+It encourages the model to focus on core speech features rather than relying on perfect audio quality.
+We carefully tuned the distortion parameters to avoid compromising speech intelligibility.
+
+
+
+In addition to these techniques, we also considered but ultimately did not implement:
+
+Speed perturbation: Altering the speed of the audio to simulate different speaking rates. While this could have been beneficial for adapting to various speaker tempos, we decided against it to maintain the natural rhythm of medical conversations, especially considering the focus on senior speakers.
+Pitch shifting: Modifying the pitch of the audio to simulate different voices. We experimented with this but found it less effective for our specific use case, as it risked altering the characteristic vocal patterns of senior speakers.
+
+Our methodology involved a careful balance between augmenting the data sufficiently to improve model robustness and maintaining the essential characteristics of medical conversations. We conducted preliminary experiments to fine-tune each augmentation technique, ensuring that the augmented audio remained representative of real-world scenarios while providing valuable additional training data for our model.
 
 ### 3.2 Dataset
 
@@ -114,17 +138,24 @@ We compared the performance of the augmented Whisper model against the base mode
 
 The noise-augmented Whisper model significantly outperformed the base model, demonstrating a notably lower CER. This improvement indicates that data augmentation techniques effectively enhanced the model's ability to handle various audio conditions and improved its overall accuracy in speech-to-text tasks.
 
-### 3.4 Discussion
+### 3.5 Discussion
 
-The success of data augmentation in improving the model's performance can be attributed to several factors:
+## 3.5 Discussion
+The success of our data augmentation approach in improving the model's performance can be attributed to several factors:
 
-1. Increased data diversity: By introducing various audio modifications, we expanded the range of input patterns the model could learn from, leading to better generalization.
+1.Increased data diversity: By introducing various audio modifications, we expanded the range of input patterns the model could learn from, leading to better generalization. This is particularly important in the medical domain, where the variety of accents, speaking styles, and environmental conditions can be vast. Our augmentation techniques helped create a more comprehensive representation of this diversity.
+2.Robustness to real-world conditions: The augmentation techniques simulated real-world audio challenges, helping the model become more resilient to noise, echoes, and distortions it might encounter in practical applications. This is crucial for medical applications, where accurate transcription can be critical for patient care. By exposing the model to these challenges during training, we improved its ability to handle less-than-ideal audio conditions in real-world scenarios.
+3.Overcoming data limitations: Given the scarcity of high-quality medical speech data, augmentation allowed us to artificially expand our dataset, mitigating some of the challenges associated with limited data availability. This is particularly relevant in the medical field, where privacy concerns and the specialized nature of the content can make large-scale data collection challenging. Our augmentation techniques effectively multiplied the value of each original audio sample.
 
-2. Robustness to real-world conditions: The augmentation techniques simulated real-world audio challenges, helping the model become more resilient to noise, echoes, and distortions it might encounter in practical applications.
+4.Domain adaptation: Although we used non-medical data for our base dataset, the augmentation techniques may have helped bridge the gap between general speech patterns and the specific characteristics of medical conversations, particularly those involving senior speakers. By simulating various acoustic conditions, we may have inadvertently created scenarios more representative of medical environments, thus aiding in domain adaptation.
 
-3. Overcoming data limitations: Given the scarcity of high-quality medical speech data, augmentation allowed us to artificially expand our dataset, mitigating some of the challenges associated with limited data availability.
+5.Balancing augmentation and authenticity: One of the key challenges we faced was finding the right balance between augmenting the data sufficiently to improve model performance and maintaining the authentic characteristics of medical conversations. Our iterative approach to fine-tuning the augmentation parameters was crucial in achieving this balance.
 
-4. Domain adaptation: Although we used non-medical data, the augmentation techniques may have helped bridge the gap between general speech patterns and the specific characteristics of medical conversations, particularly those involving senior speakers.
+6.Potential for personalization: The success of our augmentation techniques suggests that there may be potential for personalizing STT models for specific medical environments or patient demographics. Future work could explore adaptive augmentation strategies that tailor the model to particular clinical settings or patient groups.
+
+7.Limitations and future directions: Despite the improvements we observed, it's important to acknowledge that our augmentation techniques may not capture all aspects of real-world variability in medical conversations. Future work could explore more sophisticated augmentation techniques, such as GANs (Generative Adversarial Networks) for generating realistic medical audio, or incorporating domain-specific knowledge to guide the augmentation process.
+
+In conclusion, our data augmentation approach significantly improved the performance of our STT model for medical conversations. By carefully designing and implementing these techniques, we were able to create a more robust and accurate model, potentially enhancing the quality of medical transcriptions and, by extension, patient care. However, this work also opens up new questions and avenues for research, particularly in the areas of domain-specific augmentation and ethical considerations in medical AI.
 
 ## 4. Few-Shot Learning with Prototypical Network
 
@@ -211,14 +242,15 @@ Given the strengths of both approaches, a promising direction for future researc
 Additionally, further investigation into the performance of both methods on specific subsets of medical speech data (e.g., different dialects, age groups, or medical specialties) could provide valuable insights for tailoring these approaches to specific use cases in the medical field.
 
 
-##required data and a trained model
+
+## required data and a trained model
 all used data and trained model was updated on **huggingface**
-Dataset:
+## Dataset:
 gingercake01/0607medical_data15000(including 15000 medical field audio data)
 gingercake01/0604_15000_freetalk_4method(Contains 15,000 audios, divided into four equal parts, including noise augmentation, distortion, reverberation, and raw audio.)
 gingercake01/15000free_talk_sample(including 15,000 senior citizens free conversation)
 
-Model:
+## Model:
 gingercake01/STT_15000_4method_audio_basev2_0607
 The model gingercake01/STT_15000_4method_audio_basev2_0607 was trained using the dataset 0604_15000_freetalk_4method which underwent audio augmentation. This model achieved the highest accuracy in the transcription tasks in the medical domain.
 ![image](https://github.com/hairi0226/2024-MACHINE-LEARNING-AND-PROGRAMMING-final-report/assets/145079607/dc87b9c6-53ea-41e2-a496-91862528024c)
