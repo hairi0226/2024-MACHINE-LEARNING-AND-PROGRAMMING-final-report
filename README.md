@@ -1,5 +1,5 @@
-# 2024-MACHINE-LEARNING-AND-PROGRAMMING-final-report
-# Final Report: Enhancing the Performance of Speech-To-Text (STT) Models in the Medical Field Using Non-Medical Field Data
+# 2024-MACHINE-LEARNING-AND-PROGRAMMING-final-report(Jianghairi_2023324083)
+# Final Report: Enhancing the Performance of Speech-To-Text (STT) Models in the Medical Field Using Non-Medical Field Data(11-A_group_task)
 
 ## 1. Introduction
 
@@ -74,7 +74,6 @@ The dataset was split into four equal parts, each receiving a different augmenta
 ### 3.3 Detail of data augmentation
 
 data augmentation Code was uploaded in "audio_augmentation.ipynb"
-
 
 ### Data Augmentation
 
