@@ -194,7 +194,7 @@ Our research has successfully addressed key challenges in medical AI through the
 3. Few-shot learning effectively leveraged limited data to adapt the model to the medical domain.
 
 These approaches collectively demonstrated significant improvements in model accuracy, showcasing the potential of AI in healthcare applications, particularly for senior care.
-## 6. Comparison with Project 11-b and Analysis of Methods**
+## 6. Comparison with Project 11-b and Analysis of Methods
 In response to the valuable feedback received, we would like to provide additional insights into our results, particularly in comparison to Project 11-b, and elaborate on the differences in our methodologies.
 ### 6.1 Comparison of Results and Methodologies
 While both our project and Project 11-b aimed to improve Speech-to-Text (STT) performance in the medical field, we adopted different approaches to achieve this goal.
