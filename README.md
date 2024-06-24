@@ -194,7 +194,7 @@ Our research has successfully addressed key challenges in medical AI through the
 3. Few-shot learning effectively leveraged limited data to adapt the model to the medical domain.
 
 These approaches collectively demonstrated significant improvements in model accuracy, showcasing the potential of AI in healthcare applications, particularly for senior care.
-## 6. Comparison with Project 11-b and Analysis of Methods**
+## 6. Comparison with Project 11-b and Analysis of Methods
 In response to the valuable feedback received, we would like to provide additional insights into our results, particularly in comparison to Project 11-b, and elaborate on the differences in our methodologies.
 ### 6.1 Comparison of Results and Methodologies
 While both our project and Project 11-b aimed to improve Speech-to-Text (STT) performance in the medical field, we adopted different approaches to achieve this goal.
@@ -243,8 +243,7 @@ Given the strengths of both approaches, a promising direction for future researc
 Additionally, further investigation into the performance of both methods on specific subsets of medical speech data (e.g., different dialects, age groups, or medical specialties) could provide valuable insights for tailoring these approaches to specific use cases in the medical field.
 
 
-<<<<<<< HEAD
-##required data and a trained model
+## required data and a trained model
 all used data and trained model was updated on **huggingface**
 Dataset:
 gingercake01/0607medical_data15000(including 15000 medical field audio data)
@@ -257,24 +256,24 @@ Model:
 ## required data and a trained model
 all used data and trained model was updated on **huggingface**
 ## Dataset:
-gingercake01/0607medical_data15000(including 15000 medical field audio data)
+>gingercake01/0607medical_data15000(including 15000 medical field audio data)
 gingercake01/0604_15000_freetalk_4method(Contains 15,000 audios, divided into four equal parts, including noise augmentation, distortion, reverberation, and raw audio.)
 gingercake01/15000free_talk_sample(including 15,000 senior citizens free conversation)
 
 ## Model:
->>>>>>> 256494c458897eae23a85b5e728484df34648b9d
+> 256494c458897eae23a85b5e728484df34648b9d
 gingercake01/STT_15000_4method_audio_basev2_0607
 The model gingercake01/STT_15000_4method_audio_basev2_0607 was trained using the dataset 0604_15000_freetalk_4method which underwent audio augmentation. This model achieved the highest accuracy in the transcription tasks in the medical domain.
 ![image](https://github.com/hairi0226/2024-MACHINE-LEARNING-AND-PROGRAMMING-final-report/assets/145079607/dc87b9c6-53ea-41e2-a496-91862528024c)
 ![image](https://github.com/hairi0226/2024-MACHINE-LEARNING-AND-PROGRAMMING-final-report/assets/145079607/e9d7c041-58f2-40e7-a8c0-6649f8720d75)
 
 
-gingercake01/STT_15000audio_basev2_0606
+>gingercake01/STT_15000audio_basev2_0606
 The model STT_15000audio_basev2_0606 was trained using 15,000 freetalk datasets that were not subjected to audio augmentation, serving as a control model.
 ![image](https://github.com/hairi0226/2024-MACHINE-LEARNING-AND-PROGRAMMING-final-report/assets/145079607/2aa0d038-6b19-493a-86e7-823bfa545a73)
 ![image](https://github.com/hairi0226/2024-MACHINE-LEARNING-AND-PROGRAMMING-final-report/assets/145079607/a80fc0c2-d61b-417d-9ebc-d11cf6c9e6e7)
 
-gingercake01/STT_1000audio_basev3
+>gingercake01/STT_1000audio_basev3
 The model gingercake01/STT_1000audio_basev3 was initially trained with a small sample dataset to test the feasibility of the code and to prevent wasting GPU resources.
 ![image](https://github.com/hairi0226/2024-MACHINE-LEARNING-AND-PROGRAMMING-final-report/assets/145079607/c6b97c67-6e9c-491c-99ce-6e636ce4e922)
 ![image](https://github.com/hairi0226/2024-MACHINE-LEARNING-AND-PROGRAMMING-final-report/assets/145079607/f93268fa-ff93-43a1-b604-53ca760ecc60)
